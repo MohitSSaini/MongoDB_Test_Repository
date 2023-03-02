@@ -1,5 +1,7 @@
 package com.example.mongodb_test_repository.repository;
 
+import com.example.mongodb_test_repository.domain.Customer;
+import com.example.mongodb_test_repository.domain.Product;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +12,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @DataMongoTest
 class CustomerRepositoryTest {
+    Customer customer;
+    Product product;
+
 
     @BeforeEach
     void setUp() {
