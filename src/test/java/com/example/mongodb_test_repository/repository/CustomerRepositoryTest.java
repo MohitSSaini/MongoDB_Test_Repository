@@ -69,4 +69,14 @@ class CustomerRepositoryTest {
         assertEquals(2, customerList.size());
     }
 
+    @Test
+    @DisplayName("Test For Find By One Customer")
+    void findByOneCustomer() {
+        customerRepository.save(customer);
+        product = new Product(29, "Laptop", "Awesome");
+        customer = new Customer(28, "Shivansh", "9485949478", product);
+        customerRepository.save(customer);
+        Optional<Customer> oneCustomer = customerRepository.findById(30L);
+        assertTrue(oneCustomer.isPresent());
+    }
 }
