@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
@@ -54,6 +56,17 @@ class CustomerRepositoryTest {
         product = new Product(2, "Nokia", "VeryGood");
         customer = new Customer(19, "Sunil", "8863567738", product);
         customerRepository.save(customer);
+    }
+
+    @Test
+    @DisplayName("Test For Find All Details")
+    void findAllDetails() {
+        customerRepository.save(customer);
+        product = new Product(11, "WashingMachine", "Automatic");
+        customer = new Customer(18, "Sanjay", "28378493939", product);
+        customerRepository.save(customer);
+        List<Customer> customerList = customerRepository.findAll();
+        assertEquals(2, customerList.size());
     }
 
 }
