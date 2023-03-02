@@ -21,6 +21,8 @@ class CustomerRepositoryTest {
 
     @BeforeEach
     void setUp() {
+        product = new Product(15, "Phone", "Smart Phones");
+        customer = new Customer(30, "Ravi", "9802009868", product);
     }
 
     @AfterEach
