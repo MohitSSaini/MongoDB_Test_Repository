@@ -47,4 +47,13 @@ class CustomerRepositoryTest {
         Optional<Customer> customerOptional = customerRepository.findByProductName("Samsung");
         assertTrue(customerOptional.isPresent());
     }
+
+    @Test
+    @DisplayName("Test For Add Customer")
+    void addCustomer() {
+        product = new Product(2, "Nokia", "VeryGood");
+        customer = new Customer(19, "Sunil", "8863567738", product);
+        customerRepository.save(customer);
+    }
+
 }
