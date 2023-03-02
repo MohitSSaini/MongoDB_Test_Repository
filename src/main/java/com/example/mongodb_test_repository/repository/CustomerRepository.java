@@ -5,5 +5,8 @@
  */
 package com.example.mongodb_test_repository.repository;
 
-public interface CustomerRepository {
+import com.example.mongodb_test_repository.domain.Customer;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface CustomerRepository extends MongoRepository<Customer, Long> {
 }
