@@ -19,4 +19,13 @@ public class Customer {
 
     private Product product;
 
+    public Customer(long id, String name, String phoneNo, Product product) {
+        this.id = id;
+        this.name = name;
+        this.phoneNo = phoneNo;
+        this.product = product;
+    }
+
+    public Customer() {
+    }
 }
