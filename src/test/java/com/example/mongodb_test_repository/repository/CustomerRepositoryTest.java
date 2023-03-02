@@ -27,6 +27,9 @@ class CustomerRepositoryTest {
 
     @AfterEach
     void tearDown() {
+        product = null;
+        customer = null;
+        customerRepository.deleteAll();
     }
 
     @Test
