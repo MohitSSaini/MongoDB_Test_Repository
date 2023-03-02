@@ -12,4 +12,13 @@ public class Product {
     private String name;
 
     private String description;
+
+    public Product(long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Product() {
+    }
 }
